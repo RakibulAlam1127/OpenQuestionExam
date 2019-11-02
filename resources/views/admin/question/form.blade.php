@@ -26,7 +26,7 @@
 <div class="form-group">
     <label class="control-label">{{ __('Question Required') }}<span class="text-danger">*</span></label>
     <input type="text" name="question_require" id="question_require" class="form-control @error('question_require') is-invalid @enderror"
-           placeholder="{{ __('Question Required') }}" value="{{ old('question_require')??$question->question_required }}" />
+           placeholder="{{ __('Question Required') }}" value="{{ old('question_require')??$question->question_require }}" />
     @error('question_require')
     <div class="form-control-feedback">{{ $message }}</div>
     @enderror

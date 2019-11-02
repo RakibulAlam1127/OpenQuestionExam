@@ -15,7 +15,7 @@
                      </tr>
                   </thead>
                   <tbody>
-                  {{$i = 1}}
+                 <?php $i = 1; ?>
                   @foreach($all_questions  as $question)
 
                     <tr>

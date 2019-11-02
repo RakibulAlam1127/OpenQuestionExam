@@ -11,16 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 //Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 //Admin Route Group
-Route::prefix('admin')->namespace('Web\Admin')->group(function(){
+Route::prefix('admin')->namespace('Web\Backend\Admin')->group(function(){
 
     // Admin Dashboard Controller Showing for Admin Dashboard
     Route::get('/dashboard','AdminDashboardController@index')->name('admin.dashboard');
@@ -28,5 +26,13 @@ Route::prefix('admin')->namespace('Web\Admin')->group(function(){
     //Question Controller For Admin
      Route::resource('question','QuestionController');
 
-
 });
+
+
+
+//Frontend Group Controller
+ Route::namespace('Web\Frontend')->group(function(){
+     Route::get('/','FrontendController@index');
+     Route::get('/category/{type}','CategoryController@showCategory');
+     Route::post('/answer','AnswerController@store')->name('answer.store');
+ });

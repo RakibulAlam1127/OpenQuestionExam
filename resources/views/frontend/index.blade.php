@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Simple landing page</title>
+  <title>{{__('TestLaravelDev')}}</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,13 +10,16 @@
   <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="vendors/aos/css/aos.css">
   <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body id="body" data-spy="scroll" data-target=".navbar" data-offset="100">
   <header id="header-section">
     <nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
     <div class="container">
       <div class="navbar-brand-wrapper d-flex w-100">
-        <img src="images/Group2.svg" alt="">
+        <span class="text-muted text-danger">
+          <img src="https://alkalab.com/wp/wp-content/uploads/2018/09/logo-black-small.png" width="auto" height="25" alt="">
+        </span>
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="mdi mdi-menu navbar-toggler-icon"></span>
         </button> 
@@ -38,14 +41,23 @@
             <a class="nav-link" href="#features-section">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#digital-marketing-section">Blog</a>  
+
+            <div class="dropdown show">
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Questions
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                @foreach($categories as $category)
+                   <a class="dropdown-item" href="/category/{{$category->type}}">{{ucwords($category->type)}}</a>
+                 @endforeach
+              </div>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#feedback-section">Testimonials</a>
+            <a class="nav-link" href="#feedback-section">Contact</a>
           </li>
-          <li class="nav-item btn-contact-us pl-4 pl-lg-0">
-            <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Contact Us</button>
-          </li>
+
         </ul>
       </div>
     </div> 
@@ -53,11 +65,11 @@
   </header>
   <div class="banner" >
     <div class="container">
-      <h1 class="font-weight-semibold">Search engine optimisation &<br>Marketing.</h1>
-      <h6 class="font-weight-normal text-muted pb-3">Simple is a simple template with a creative design that solves all your marketing and SEO queries.</h6>
+      <h1 class="font-weight-semibold text-muted">Simple answer to the Question & get<br>Reward.</h1>
+      <h6 class="font-weight-normal text-muted pb-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim explicabo facilis veritatis!</h6>
       <div>
-        <button class="btn btn-opacity-light mr-1">Get started</button>
-        <button class="btn btn-opacity-success ml-1">Learn more</button>
+        <button class="btn btn-primary mr-1">Get started</button>
+        <button class="btn btn-info ml-1">Learn more</button>
       </div>
       <img src="images/Group171.svg" alt="" class="img-fluid">
     </div>
@@ -66,13 +78,13 @@
     <div class="container">
       <section class="features-overview" id="features-section" >
         <div class="content-header">
-          <h2>How does it works</h2>
+          <h2 class="text-muted">How does it helps yourself</h2>
           <h6 class="section-subtitle text-muted">One theme that serves as an easy-to-use operational toolkit<br>that meets customer's needs.</h6>
         </div>
         <div class="d-md-flex justify-content-between">
           <div class="grid-margin d-flex justify-content-start">
             <div class="features-width">
-              <img src="images/Group12.svg" alt="" class="img-icons">
+              <i class="fa fa-cog img-icons" style="font-size: 60px;" aria-hidden="true"></i>
               <h5 class="py-3">Speed<br>Optimisation</h5>
               <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
               <a href="#"><p class="readmore-link">Readmore</p></a>  
@@ -80,7 +92,7 @@
           </div>
           <div class="grid-margin d-flex justify-content-center">
             <div class="features-width">
-              <img src="images/Group7.svg" alt="" class="img-icons">
+              <i class="fa fa-plane img-icons" style="font-size: 60px;" aria-hidden="true"></i>
               <h5 class="py-3">SEO and<br>Backlinks</h5>
               <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
               <a href="#"><p class="readmore-link">Readmore</p></a>
@@ -88,7 +100,7 @@
           </div>
           <div class="grid-margin d-flex justify-content-end">
             <div class="features-width">
-              <img src="images/Group5.svg" alt="" class="img-icons">
+              <i class="fa fa-line-chart img-icons" style="font-size: 60px;" aria-hidden="true"></i>
               <h5 class="py-3">Content<br>Marketing</h5>
               <p class="text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
               <a href="#"><p class="readmore-link">Readmore</p></a>
@@ -99,7 +111,7 @@
       <section class="digital-marketing-service" id="digital-marketing-section">
         <div class="row align-items-center">
           <div class="col-12 col-lg-7 grid-margin grid-margin-lg-0" data-aos="fade-right">
-            <h3 class="m-0">We Offer a Full Range<br>of Digital Marketing Services!</h3>
+            <h3 class="m-0">We Offer a Full Exam<br>of Image Processing</h3>
             <div class="col-lg-7 col-xl-6 p-0">
               <p class="py-4 m-0 text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
               <p class="font-weight-medium text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer</p>
@@ -114,7 +126,7 @@
             <img src="images/Group2.png" alt="" class="img-fluid">
           </div>
           <div class="col-12 col-lg-5 flex-item grid-margin" data-aos="fade-left">
-            <h3 class="m-0">Leading Digital Agency<br>for  Business Solution.</h3>
+            <h3 class="m-0">And Also Offering Machine Language</h3>
             <div class="col-lg-9 col-xl-8 p-0">
               <p class="py-4 m-0 text-muted">Power-packed with impressive features and well-optimized, this template is designed to provide the best performance in all circumstances.</p>
               <p class="pb-2 font-weight-medium text-muted">Its smart features make it a powerful stand-alone website building tool.</p>
@@ -126,7 +138,7 @@
       <section class="case-studies" id="case-studies-section">
         <div class="row grid-margin">
           <div class="col-12 text-center pb-5">
-            <h2>Our case studies</h2>
+            <h2>Our Popular Topic</h2>
             <h6 class="section-subtitle text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum.</h6>
           </div>
           <div class="col-12 col-md-6 col-lg-3 stretch-card mb-3 mb-lg-0" data-aos="zoom-in">
@@ -144,8 +156,8 @@
                   </div>
                 </div>   
                 <div class="card-details text-center pt-4">
-                    <h6 class="m-0 pb-1">Online Marketing</h6>
-                    <p>Seo, Marketing</p>
+                    <h6 class="m-0 pb-1">Artificial Intelligence</h6>
+                    <p>Machine,Language</p>
                 </div>
               </div>
             </div>
@@ -218,7 +230,7 @@
       <section class="customer-feedback" id="feedback-section">
         <div class="row">
           <div class="col-12 text-center pb-5">
-            <h2>What our customers have to say</h2>
+            <h2>What our Student have to say</h2>
             <h6 class="section-subtitle text-muted m-0">Lorem ipsum dolor sit amet, tincidunt vestibulum.</h6>
           </div>
           <div class="owl-carousel owl-theme grid-margin">
@@ -229,7 +241,7 @@
                     <p class="m-0 py-3 text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
                     <div class="content-divider m-auto"></div>
                     <h6 class="card-title pt-3">Tony Martinez</h6>
-                    <h6 class="customer-designation text-muted m-0">Marketing Manager</h6>
+                    <h6 class="customer-designation text-muted m-0">Software Engineer</h6>
                   </div>
                 </div>
               </div>
@@ -239,8 +251,8 @@
                     <img src="images/face3.jpg" width="89" height="89" alt="" class="img-customer">
                     <p class="m-0 py-3 text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
                     <div class="content-divider m-auto"></div>
-                    <h6 class="card-title pt-3">Sophia Armstrong</h6>
-                    <h6 class="customer-designation text-muted m-0">Marketing Manager</h6>
+                    <h6 class="card-title pt-3">Mr Alex</h6>
+                    <h6 class="customer-designation text-muted m-0">IT Officer</h6>
                   </div>
                 </div>
               </div>
@@ -261,8 +273,8 @@
                     <img src="images/face15.jpg" width="89" height="89" alt="" class="img-customer">
                     <p class="m-0 py-3 text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
                     <div class="content-divider m-auto"></div>
-                    <h6 class="card-title pt-3">Cody Lambert</h6>
-                    <h6 class="customer-designation text-muted m-0">Marketing Manager</h6>
+                    <h6 class="card-title pt-3">Tomas Alva</h6>
+                    <h6 class="customer-designation text-muted m-0">Google Engineer</h6>
                   </div>
                 </div>
               </div>
@@ -283,8 +295,8 @@
                     <img src="images/face1.jpg" width="89" height="89" alt="" class="img-customer">
                     <p class="m-0 py-3 text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
                     <div class="content-divider m-auto"></div>
-                    <h6 class="card-title pt-3">Tony Martinez</h6>
-                    <h6 class="customer-designation text-muted m-0">Marketing Manager</h6>
+                    <h6 class="card-title pt-3">Mike</h6>
+                    <h6 class="customer-designation text-muted m-0">Facebook Engineer</h6>
                   </div>
                 </div>
               </div>
@@ -295,7 +307,7 @@
                     <p class="m-0 py-3 text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
                     <div class="content-divider m-auto"></div>
                     <h6 class="card-title pt-3">Tony Martinez</h6>
-                    <h6 class="customer-designation text-muted m-0">Marketing Manager</h6>
+                    <h6 class="customer-designation text-muted m-0">You tuber</h6>
                   </div>
                 </div>
               </div>
@@ -306,7 +318,7 @@
                     <p class="m-0 py-3 text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
                     <div class="content-divider m-auto"></div>
                     <h6 class="card-title pt-3">Sophia Armstrong</h6>
-                    <h6 class="customer-designation text-muted m-0">Marketing Manager</h6>
+                    <h6 class="customer-designation text-muted m-0">Web Designer</h6>
                   </div>
                 </div>
               </div>
@@ -317,7 +329,7 @@
                     <p class="m-0 py-3 text-muted">Lorem ipsum dolor sit amet, tincidunt vestibulum. Fusce egeabus consectetuer turpis, suspendisse.</p>
                     <div class="content-divider m-auto"></div>
                     <h6 class="card-title pt-3">Cody Lambert</h6>
-                    <h6 class="customer-designation text-muted m-0">Marketing Manager</h6>
+                    <h6 class="customer-designation text-muted m-0">Full Stack Developer</h6>
                   </div>
                 </div>
               </div>
@@ -327,28 +339,28 @@
       <section class="contact-us" id="contact-section">
         <div class="contact-us-bgimage grid-margin" >
           <div class="pb-4">
-            <h4 class="px-3 px-md-0 m-0" data-aos="fade-down">Do you have any projects?</h4>
+            <h4 class="px-3 px-md-0 m-0" data-aos="fade-down">Do you have any Query?</h4>
             <h4 class="pt-1" data-aos="fade-down">Contact us</h4>
           </div>
           <div data-aos="fade-up">
-            <button class="btn btn-rounded btn-outline-danger">Contact us</button>
+            <button class="btn btn-rounded btn-outline-success">Contact us</button>
           </div>          
         </div>
       </section>
       <section class="contact-details" id="contact-details-section">
         <div class="row text-center text-md-left">
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
-            <img src="images/Group2.svg" alt="" class="pb-2">
+            <img src="https://alkalab.com/wp/wp-content/uploads/2018/09/logo-black-small.png" width="auto" height="25" alt="">
             <div class="pt-2">
-              <p class="text-muted m-0">mikayla_beer@feil.name</p>
-              <p class="text-muted m-0">906-179-8309</p>
+              <p class="text-muted m-0">alkalab@yahoo.com</p>
+              <p class="text-muted m-0">001-875-0125</p>
             </div>         
           </div>
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
             <h5 class="pb-2">Get in Touch</h5>
-            <p class="text-muted">Don’t miss any updates of our new templates and extensions.!</p>
+            <p class="text-muted">Don’t miss any updates of our new Blog</p>
             <form>
-              <input type="text" class="form-control" id="Email" placeholder="Email id">
+              <input type="text" class="form-control " id="Email" placeholder="Email id">
             </form>
             <div class="pt-3">
               <button class="btn btn-dark">Subscribe</button>
@@ -363,7 +375,8 @@
           </div>
           <div class="col-12 col-md-6 col-lg-3 grid-margin">
               <h5 class="pb-2">Our address</h5>
-              <p class="text-muted">518 Schmeler Neck<br>Bartlett. Illinois</p>
+              <p class="text-muted">16 Place Madeleine Caulier<br>
+                59800 LILLE FRANCE</p>
               <div class="d-flex justify-content-center justify-content-md-start">
                 <a href="#"><span class="mdi mdi-facebook"></span></a>
                 <a href="#"><span class="mdi mdi-twitter"></span></a>
@@ -374,7 +387,7 @@
         </div>  
       </section>
       <footer class="border-top">
-        <p class="text-center text-muted pt-4">Copyright © 2019<a href="https://www.bootstrapdash.com/" class="px-1">Bootstrapdash.</a>All rights reserved.</p>
+        <p class="text-center text-muted pt-4">Copyright © 2019<a href="https://alkalab.com/" class="px-1">Alkalab.</a>All rights reserved.</p>
       </footer>
       <!-- Modal for Contact - us Button -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

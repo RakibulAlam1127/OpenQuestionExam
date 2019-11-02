@@ -23098,7 +23098,7 @@ return jQuery;
           result = new array.constructor(length);
 
       // Add properties assigned by `RegExp#exec`.
-      if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
+      if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index.blade.php')) {
         result.index = array.index;
         result.input = array.input;
       }
@@ -34901,7 +34901,7 @@ function getPopperOffsets(popper, referenceOffsets, placement) {
  * @argument {Array} arr
  * @argument prop
  * @argument value
- * @returns index or -1
+ * @returns index.blade.php or -1
  */
 function find(arr, check) {
   // use native find if supported
@@ -34920,7 +34920,7 @@ function find(arr, check) {
  * @argument {Array} arr
  * @argument prop
  * @argument value
- * @returns index or -1
+ * @returns index.blade.php or -1
  */
 function findIndex(arr, prop, value) {
   // use native findIndex if supported
