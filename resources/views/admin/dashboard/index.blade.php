@@ -8,7 +8,7 @@
                     <div class="info">
                         <h4>{{ __('Questions') }}</h4>
                         <p>
-                            <b>21</b>
+                            <b>{{$all_questions}}</b>
                         </p>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                     <div class="info">
                         <h4>{{ __('Answers') }}</h4>
                         <p>
-                            <b>21</b>
+                            <b>{{$all_answers}}</b>
                         </p>
                     </div>
                 </div>
@@ -40,12 +40,12 @@
             </div>
 
             <div class="col-md-6 col-lg-3">
-                <div class="widget-small danger coloured-icon">
+                <div class="widget-small info coloured-icon">
                     <i class="icon fa fa-bars fa-3x"></i>
                     <div class="info">
-                        <h4>{{ __('Others') }}</h4>
+                        <h4>{{ __('Filter Answer') }}</h4>
                         <p>
-                            <b>21</b>
+                            <b>{{$filter_answers}}</b>
                         </p>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ class AnswerController extends Controller
     {
 
       $valid_data = $request->validate([
-           'answer' => 'required|max:80|min:4',
+           'answer' => 'required|max:120|min:4',
             'description' => 'sometimes',
             'user_name'   => 'required|max:20|min:3',
             'question_id' => 'required'

@@ -26,6 +26,17 @@ Route::prefix('admin')->namespace('Web\Backend\Admin')->group(function(){
     //Question Controller For Admin
      Route::resource('question','QuestionController');
 
+        //In this route Our honorable admin see this list of the filter answer .
+     Route::get('/filterAnswer','FilterAnswerController@filterAnswer')->name('answer.filter');
+
+      //In this route Our Honorable Admin see the filter answer
+     Route::get('/filterAnswer/{filterAnswer}','FilterAnswerController@showFilterAnswer');
+
+
+     //In this route Our Honorable admin Remove the filter answer
+     Route::delete('/filterAnswer/{filterAnswer}','FilterAnswerController@deleteFilterAnswer');
+
+
 });
 
 

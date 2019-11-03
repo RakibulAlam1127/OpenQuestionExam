@@ -8,9 +8,9 @@ class Question extends Model
 {
     protected $guarded = [];
 
-    public function answer()
+    public function answers()
     {
-        $this->hasMany(Answer::class);
+      return  $this->hasMany(Answer::class);
     }
 
 
