@@ -76,7 +76,7 @@ class QuestionController extends Controller
         $valid_data =  $request->validate([
             'name' => 'required|max:80|min:2',
             'type' => 'required|max:60|min:2',
-            'question_require' => 'required|max:100',
+            'question_require' => 'required|max:100|unique:questions',
             'date'          => 'required|date'
         ]);
 

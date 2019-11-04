@@ -26,21 +26,8 @@
                 </div>
             </div>
 
-
             <div class="col-md-6 col-lg-3">
-                <div class="widget-small warning  coloured-icon">
-                    <i class="icon fa fa-envelope-open fa-3x"></i>
-                    <div class="info">
-                        <h4>{{ __('Notifications') }}</h4>
-                        <p>
-                            <b>21</b>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3">
-                <div class="widget-small info coloured-icon">
+                <div class="widget-small warning coloured-icon">
                     <i class="icon fa fa-bars fa-3x"></i>
                     <div class="info">
                         <h4>{{ __('Filter Answer') }}</h4>
@@ -50,6 +37,19 @@
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small danger coloured-icon">
+                    <i class="icon fa fa-trash fa-3x"></i>
+                    <div class="info">
+                        <h4>{{ __('Others') }}</h4>
+                        <p>
+                            <b>0</b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>

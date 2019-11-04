@@ -37,18 +37,18 @@ class QuestionAnswerController extends Controller
     public function update(Request $request, $id)
     {
         //return $request->user_name;
-//       $valid_data =   $this->validate($request,[
-//             'user_name'   => 'required|max:80|min:3',
-//            'answer' => 'required|max:120|min:4',
-//            'description' => 'sometimes'
-//        ]);
-//
-//       $answer = Answer::findOrfail($id);
-//
-//       $answer->user_name = $request->user_name;
-//       $answer->answer = $request->answer;
-//       $answer->description = $request->description;
-//       $answer->save();
+       $valid_data =   $this->validate($request,[
+             'user_name'   => 'required|max:80|min:3',
+            'answer' => 'required|max:120|min:4',
+            'description' => 'sometimes'
+        ]);
+
+       return  Answer::findOrfail($id);
+
+       $answer->user_name = $request->user_name;
+       $answer->answer = $request->answer;
+       $answer->description = $request->description;
+       $answer->save();
 
 
 
