@@ -27,9 +27,10 @@
                 </tr>
                 </thead>
                 <tbody>
-                     <tr>
+
                          <?php $i = 1; ?>
                          @foreach($filterAnswers as $answer)
+                             <tr>
                             <td>{{$i++}}</td>
                             <td> {{$answer->question->question_require}}</td>
                              <td>{{$answer->answer}}</td>
@@ -53,8 +54,9 @@
                                     </div>
                                 </div>
                              </td>
+                             </tr>
                          @endforeach
-                     </tr>
+
                 </tbody>
             </table>
         </div>

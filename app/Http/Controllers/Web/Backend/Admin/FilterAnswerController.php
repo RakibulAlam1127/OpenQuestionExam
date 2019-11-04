@@ -40,7 +40,7 @@ class FilterAnswerController extends Controller
     public function deleteFilterAnswer($id)
     {
         $filter_Answer_data = Answer::findOrFail($id);
-        
+
         if($filter_Answer_data->delete()){
             Session::flash('response', array('type' => 'success', 'message' => 'Data Remove Successfully'));
             return redirect(route('answer.filter'));

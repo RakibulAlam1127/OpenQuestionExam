@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Here We Change mapApiRoutes() in the Providers/RouteServiceProvider.php file for namespace.
+Route::apiResource('/answer','QuestionAnswerController');

@@ -10,6 +10,13 @@ use Illuminate\Http\Request;
 
 class AdminDashboardController extends Controller
 {
+
+    public function __construct()
+    {
+         $this->middleware('auth');
+    }
+
+
     public function index()
         {
             $data = array(
@@ -17,6 +24,7 @@ class AdminDashboardController extends Controller
                   'all_answers' => Answer::all()->count(),
                   'filter_answers' =>  $filterAnswer = Answer::whereNotNull('description')->where( 'created_at', '>=', Carbon::now()->subDays(2))->count()
             );
+
             return view('admin.dashboard.index',$data);
         }
 }

@@ -34,7 +34,7 @@
 </script>
 <!-- Navbar -->
 <header class="app-header">
-    <a class="app-header__logo" href="{{ url('student/dashboard') }}">
+    <a class="app-header__logo" href="{{ route('admin.dashboard') }}">
     <!-- {{ config('app.name', 'PKAds') }} -->
         <span style="font-size:18px">{{ __('ALKALAB') }}</span>
     </a>
@@ -61,7 +61,7 @@
                 <li>
                     <a
                             class="dropdown-item"
-                            href
+                            href=""
                             onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();"
                     >
@@ -70,7 +70,7 @@
                     </a>
                     <form
                             id="logout-form"
-                            action=""
+                            action="{{route('admin.logout')}}"
                             method="POST"
                             style="display: none;"
                     >
@@ -145,7 +145,7 @@
             <ul class="treeview-menu">
 
                 <li>
-                    <a class="treeview-item" href="">
+                    <a class="treeview-item" href="{{route('answer.list')}}">
                         <i class="icon fa fa-circle-o"></i>
                         {{ __('View Answer')  }}
                     </a>
@@ -181,18 +181,18 @@
 
         <li class="treeview">
             <a class="app-menu__item" href="#" data-toggle="treeview">
-                <i class="app-menu__icon fa fa-envelope-open-o"></i>
+                <i class="app-menu__icon fa fa-trash"></i>
                 <span class="app-menu__label">{{
-                            __('Notification')
+                            __('Remove')
                         }}</span>
                 <i class="treeview-indicator fa fa-angle-right"></i>
             </a>
             <ul class="treeview-menu">
 
                 <li>
-                    <a class="treeview-item" href="">
+                    <a class="treeview-item" href="{{route('remove.index')}}">
                         <i class="icon fa fa-circle-o"></i>
-                        {{ __('View Notifications')  }}
+                        {{ __('Remove Answer')  }}
                     </a>
                 </li>
 

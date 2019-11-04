@@ -114,7 +114,7 @@
                                                        @csrf
                                                        <div class="form-group">
                                                            <label class="control-label">{{ __('Short Answer') }} <span class="text-danger">*</span> </label>
-                                                           <input type="text" name="answer" id="answer" class="form-control @error('answer') is-invalid @enderror"
+                                                           <input type="text" name="answer" id="answer" required class="form-control @error('answer') is-invalid @enderror"
                                                                   placeholder="{{ __('Enter Your Answer') }}" value="{{ old('answer') }}" />
                                                            @error('answer')
                                                            <div class="form-control-feedback">{{ $message }}</div>
@@ -130,9 +130,9 @@
                                                        </div>
 
                                                        <div class="form-group">
-                                                           <label class="control-label">{{ __('Your Name') }} <span class="text-danger">*</span> </label>
-                                                           <input type="text" name="user_name" id="user_name" class="form-control @error('user_name') is-invalid @enderror"
-                                                                  placeholder="{{ __('Enter Your Name') }}" value="{{ old('user_name') }}" />
+                                                           <label class="control-label">{{ __('Your Email') }} <span class="text-danger">*</span> </label>
+                                                           <input type="email" name="user_name" id="user_name" required class="form-control @error('user_name') is-invalid @enderror"
+                                                                  placeholder="{{ __('Enter Your Email') }}" value="{{ old('user_name') }}" />
                                                            @error('user_name')
                                                            <div class="form-control-feedback">{{ $message }}</div>
                                                            @enderror
